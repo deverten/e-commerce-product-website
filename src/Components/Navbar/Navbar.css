@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 2px solid  hsl(223, 64%, 98%);
+    padding-bottom: 1rem;
+   
+}
+ul {
+    display: flex;
+    align-items: center;
+
+}
+li {
+    margin-right: 1rem;
+   
+    
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+.right-nav {
+    position: absolute;
+    right: 0;
+    display: flex; 
+    align-items: center;
+}
+.cart {
+    width: 15px;
+    height: 15px;
+    margin-left: 1.5rem;
+    
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    margin-left: 1.5rem;
+}

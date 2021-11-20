@@ -1,0 +1,83 @@
+.rightside{
+    width: 35vw;
+    margin-top: 2rem;
+    position: relative;
+}
+.price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+span {
+    margin-left: 1rem;
+    padding: 0.2rem 0.4rem;
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+    border-radius: 5px;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1.5rem;
+}
+p.slashed {
+    margin-top: -1rem;
+    text-decoration: line-through;
+    font-weight: 400;
+    
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.increment {
+    display: flex;
+    border-radius: 10px;
+    width: 30%;
+    justify-content: space-between;
+    background-color: hsl(223, 64%, 98%);
+}
+button {
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    padding: 0rem 1rem;
+    color: hsl(26, 100%, 55%);
+    font-weight: 600;
+}
+.cart {
+    width: 15px;
+    height: 15px;
+    margin-left: 0;
+    color:  hsl(0, 0%, 100%) !important;
+    fill: hsl(0, 0%, 100%);
+    margin-right: 0.3rem;
+    
+}
+.add {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    width: 65%;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(26, 100%, 55%);
+   color: hsl(0, 0%, 100%)
+
+}
+p {
+    line-height: 1.5;
+    color: hsl(219, 9%, 45%);
+}
+p.count {
+    font-weight: 600;
+}
+h5 {
+    color: hsl(26, 100%, 55%);
+}
+h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}

@@ -1,0 +1,21 @@
+.leftside{
+    position: relative;
+    margin: 0 0 1rem 2rem;
+    width: 40vw
+}
+.products{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.product1 {
+    width: 40vw;
+    height: 70vh;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.select {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+}
