@@ -3,7 +3,7 @@ import './Rightside.css';
 import icon from '../Images/icon-cart.svg';
 import CartContent from '../CartContent/CartContent';
 
-function Rightside({ value, add, subtract, total }) {
+function Rightside({ value, add, subtract, total, smallImgs, onAdd }) {
   return (
     <div className='rightside'>
       <h5>SNEAKER COMPANY</h5>
@@ -24,15 +24,8 @@ function Rightside({ value, add, subtract, total }) {
           <p className='count'>{value}</p>
           <button onClick={add}>+</button>
         </div>
-        <button className='add'>
-          <img
-            src={icon}
-            fill='#fff'
-            alt='cart'
-            className='cart'
-            onClick={total}
-          />{' '}
-          Add to cart
+        <button className='add' onClick={onAdd}>
+          <img src={icon} fill='#fff' alt='cart' className='cart' /> Add to cart
         </button>
       </div>
     </div>

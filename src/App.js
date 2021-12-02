@@ -55,6 +55,33 @@ function App() {
   const [prods, setProds] = useState(productImages);
   const [selected, setSelected] = useState(0);
   const [itemNumbers, setItemNumbers] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
+
+  const onAdd = (product) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+  };
+
+  const onRemove = (smallImgs) => {
+    const exist = cartItems.find((x) => x.id === smallImgs.id);
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== smallImgs.id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x.id === smallImgs.id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
+  };
 
   const nextImg = () => {
     if (selected < prods.length - 1) setSelected((selected) => selected + 1);
@@ -77,19 +104,24 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar />
+      <Navbar
+        smallImgs={smallImgs}
+        onAdd={onAdd}
+        onRemove={onRemove}
+        cartItems={cartItems}
+      />
       <div className='section'>
         <Leftside
           handleClick={() => {
             setisOpen(true);
           }}
         />
-
         <Rightside
           value={itemNumbers}
           add={increase}
           subtract={decrease}
           total={calculate}
+          smallImgs={smallImgs}
         />
       </div>
       <Modal open={isOpen}>
