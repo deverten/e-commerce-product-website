@@ -6,26 +6,28 @@ import thumbnail3 from '../Images/image-product-3-thumbnail.jpg';
 import thumbnail4 from '../Images/image-product-4-thumbnail.jpg';
 import del from '../Images/icon-delete.svg';
 
-function CartContent({ smallImgs, onAdd, onRemove, cartItems }) {
+function CartContent({ onAdd, onRemove, cartItems, calculate }) {
   return (
-    <>
+    <div className='content'>
       <h3>Cart</h3>
-      {cartItems.map((items) => {
-        return (
-          <div className='content'>
+      <div className='content-2'>
+        {cartItems === 0 ? (
+          <div>Cart is Empty</div>
+        ) : (
+          <div className='content2'>
             <img className='thumb' src={thumbnail1} alt='' />
             <p>
-              Fall Limited Edition Sneakers $125.00 * 3{' '}
-              <span className='amount'>$375.00</span>
+              Fall Limited Edition Sneakers $125.00 * {cartItems}
+              <span className='amount'>${calculate}</span>
             </p>
             <div>
               <img src={del} alt='' />{' '}
             </div>
-            <button>Checkout</button>
           </div>
-        );
-      })}
-    </>
+        )}
+      </div>
+      <button>Checkout</button>
+    </div>
   );
 }
 

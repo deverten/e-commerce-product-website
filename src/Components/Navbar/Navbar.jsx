@@ -5,35 +5,7 @@ import avatar from '../Images/image-avatar.png';
 import logo from '../Images/logo.svg';
 import CartContent from '../CartContent/CartContent';
 
-export default function Navbar() {
-  const [cartItems, setCartItems] = useState([]);
-
-  const onAdd = (smallImgs) => {
-    const exist = cartItems.find((x) => x.id === smallImgs.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === smallImgs.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...smallImgs, qty: 1 }]);
-    }
-  };
-
-  const onRemove = (smallImgs) => {
-    const exist = cartItems.find((x) => x.id === smallImgs.id);
-    if (exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== smallImgs.id));
-    } else {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === smallImgs.id ? { ...exist, qty: exist.qty - 1 } : x
-        )
-      );
-    }
-  };
-
+export default function Navbar({ smallImgs, cartItems, onAdd, calculate }) {
   return (
     <>
       <div className='navbar'>
@@ -71,8 +43,9 @@ export default function Navbar() {
           <CartContent
             className='cartcontent'
             onAdd={onAdd}
-            onRemove={onRemove}
+            // onRemove={onRemove}
             cartItems={cartItems}
+            calculate={calculate}
           />
         </div>
       </div>

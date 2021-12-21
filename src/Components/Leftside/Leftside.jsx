@@ -9,52 +9,7 @@ import thumbnail2 from '../Images/image-product-2-thumbnail.jpg';
 import thumbnail3 from '../Images/image-product-3-thumbnail.jpg';
 import thumbnail4 from '../Images/image-product-4-thumbnail.jpg';
 
-function Leftside({ handleClick }) {
-  const thumbNails = [
-    {
-      src: thumbnail1,
-      id: 1,
-    },
-    {
-      src: thumbnail2,
-      id: 2,
-    },
-    {
-      src: thumbnail3,
-      id: 3,
-    },
-    {
-      src: thumbnail4,
-      id: 4,
-    },
-  ];
-  console.log(thumbNails[0].src);
-
-  const productImages = [
-    {
-      src: 'product1',
-      id: 1,
-    },
-    {
-      src: 'product2',
-      id: 2,
-    },
-    {
-      src: 'product3',
-      id: 3,
-    },
-    {
-      src: 'product4',
-      id: 4,
-    },
-  ];
-  const [smallImgs, setSmallImgs] = useState(thumbNails);
-  const [ids, setIds] = useState(0);
-
-  // const imageFunc = ()=> {
-  //   if smallImgs.id ===
-  // }
-  console.log(ids);
+function Leftside({ handleClick, smallImgs, onAdd, setIds, ids }) {
   return (
     <div className='leftside'>
       <img className='product1' src={product1} alt='' onClick={handleClick} />
@@ -62,12 +17,16 @@ function Leftside({ handleClick }) {
         {smallImgs.map((product) => {
           return (
             <img
-              src={product.src}
+              src={product.name}
               alt=''
               className='select'
               key={product.id}
+              product={product}
+              // onAdd={onAdd}
               onClick={() => {
-                return setIds((ids) => product.id);
+                setIds(() => `{id: ${product.id}, name: ${product.name} }`);
+                console.log(ids);
+                // onAdd(product)
               }}
             />
           );

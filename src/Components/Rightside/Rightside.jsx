@@ -3,7 +3,16 @@ import './Rightside.css';
 import icon from '../Images/icon-cart.svg';
 import CartContent from '../CartContent/CartContent';
 
-function Rightside({ value, add, subtract, total, smallImgs, onAdd }) {
+function Rightside({
+  value,
+  add,
+  onAdd,
+  subtract,
+  total,
+  smallImgs,
+  itemNumbers,
+  ids,
+}) {
   return (
     <div className='rightside'>
       <h5>SNEAKER COMPANY</h5>

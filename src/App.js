@@ -20,15 +20,19 @@ function App() {
   const thumbNails = [
     {
       name: thumbnail1,
+      id: 1,
     },
     {
       name: thumbnail2,
+      id: 2,
     },
     {
       name: thumbnail3,
+      id: 3,
     },
     {
       name: thumbnail4,
+      id: 4,
     },
   ];
   const productImages = [
@@ -55,33 +59,36 @@ function App() {
   const [prods, setProds] = useState(productImages);
   const [selected, setSelected] = useState(0);
   const [itemNumbers, setItemNumbers] = useState(0);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(0);
+  const [ids, setIds] = useState({});
+  console.log(ids);
 
-  const onAdd = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
-    }
-  };
-
-  const onRemove = (smallImgs) => {
-    const exist = cartItems.find((x) => x.id === smallImgs.id);
-    if (exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== smallImgs.id));
-    } else {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === smallImgs.id ? { ...exist, qty: exist.qty - 1 } : x
-        )
-      );
-    }
-  };
+  // const onAdd = (product) => {
+  //   // console.log(ids.id);
+  //   const exist = cartItems.find((x) => x.id === ids.id);
+  //   if (exist) {
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //         x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+  //       )
+  //     );
+  //   } else {
+  //     setCartItems([...cartItems, { ids, qty: 1 }]);
+  //   }
+  //   console.log(cartItems);
+  // };
+  // const onRemove = (product) => {
+  //   const exist = cartItems.find((x) => x.id === product.id);
+  //   if (exist.qty === 1) {
+  //     setCartItems(cartItems.filter((x) => x.id !== smallImgs.id));
+  //   } else {
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //         x.id === smallImgs.id ? { ...exist, qty: exist.qty - 1 } : x
+  //       )
+  //     );
+  //   }
+  // };
 
   const nextImg = () => {
     if (selected < prods.length - 1) setSelected((selected) => selected + 1);
@@ -98,27 +105,44 @@ function App() {
       setItemNumbers((itemNumbers) => itemNumbers - 1);
     }
   };
-  const calculate = () => {
-    return 125 * itemNumbers;
+  const calculate = 125 * cartItems;
+
+  const onAdd = () => {
+    console.log('hello');
+    setCartItems((cartItems) => (cartItems += itemNumbers));
   };
 
+  console.log(itemNumbers);
+  console.log(cartItems);
+  console.log(calculate);
   return (
     <div className='App'>
       <Navbar
-        smallImgs={smallImgs}
         onAdd={onAdd}
-        onRemove={onRemove}
+        smallImgs={smallImgs}
+        itemNumbers={itemNumbers}
+        calculate={calculate}
+        // onRemove={onRemove}
         cartItems={cartItems}
       />
       <div className='section'>
         <Leftside
+          ids={ids}
+          setIds={setIds}
+          smallImgs={smallImgs}
+          // cartItems={cartItems}
+          // setCartItems={setCartItems}
+          onAdd={onAdd}
           handleClick={() => {
             setisOpen(true);
           }}
         />
         <Rightside
+          itemNumbers={itemNumbers}
+          ids={ids}
           value={itemNumbers}
           add={increase}
+          onAdd={onAdd}
           subtract={decrease}
           total={calculate}
           smallImgs={smallImgs}
