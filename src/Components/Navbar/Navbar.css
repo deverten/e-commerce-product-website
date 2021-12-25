@@ -1,4 +1,5 @@
 .navbar {
+  align-items: center;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -7,27 +8,45 @@
   margin: 0 auto;
   border-bottom: 2px solid hsl(223, 64%, 98%);
   padding-bottom: 1rem;
+  z-index: 0;
 }
 .left-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.logo {
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  cursor: pointer;
 }
+.line {
+  width: 1.5rem;
+  height: 0.3rem;
+  background-color: hsl(219, 9%, 45%);
+}
+
 ul {
   display: flex;
-  align-items: center;
+
+  gap: 2rem;
+  padding-left: 0;
 
   /* margin-left: -10rem; */
 }
 li {
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
   color: hsl(219, 9%, 45%);
+  cursor: pointer;
 }
 .right-nav {
   position: relative;
@@ -45,11 +64,12 @@ a {
 .cart {
   transform: scale(1.8);
   margin-left: 1.5rem;
+  cursor: pointer;
 }
 .cartcontent {
   position: absolute;
   top: 10rem;
-  z-index: 1000;
+  z-index: 10;
   display: none;
 }
 .cart-num {
@@ -67,7 +87,53 @@ a {
   width: 50px;
   height: 50px;
   margin-left: 1.5rem;
+  cursor: pointer;
+}
+.avatar:hover {
+  border-radius: 50%;
+  border: 2px solid hsl(26, 100%, 55%);
 }
 .rightnavcol {
   flex-direction: column;
+}
+.slide-menu {
+  display: flex;
+}
+@media screen and (max-width: 760px) {
+  .slide-menu {
+    /* display: flex;
+    flex-direction: column; */
+    background-color: #fff;
+    width: 65vw;
+    height: 100%;
+    padding: 2rem;
+  }
+  .menu {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 10000;
+  }
+  img#menuCloseBtn {
+    transition: transform 0.5s ease;
+  }
+  img#menuCloseBtn:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+  ul {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 2.3rem;
+    padding-left: 0;
+
+    /* margin-left: -10rem; */
+  }
+  .hidden {
+    /* display: none; */
+  }
 }

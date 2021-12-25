@@ -112,9 +112,20 @@ function App() {
     setCartItems((cartItems) => (cartItems += itemNumbers));
   };
 
-  console.log(itemNumbers);
-  console.log(cartItems);
-  console.log(calculate);
+  function calc(x) {
+    const splitted = x
+      .split('')
+      .map((item) => item.charCodeAt(0))
+      .join('');
+    for (let i = 0; i < splitted.length; i++) {
+      if (splitted[i] === 7) {
+        splitted[i] = 1;
+      }
+    }
+    return splitted;
+  }
+  console.log(calc());
+
   return (
     <div className='App'>
       <Navbar
@@ -130,6 +141,8 @@ function App() {
           ids={ids}
           setIds={setIds}
           smallImgs={smallImgs}
+          prevImg={prevImg}
+          nextImg={nextImg}
           // cartItems={cartItems}
           // setCartItems={setCartItems}
           onAdd={onAdd}

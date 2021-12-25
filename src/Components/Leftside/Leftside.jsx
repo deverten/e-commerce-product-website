@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Leftside.css';
 import product1 from '../Images/image-product-1.jpg';
 import product2 from '../Images/image-product-2.jpg';
@@ -8,11 +8,26 @@ import thumbnail1 from '../Images/image-product-1-thumbnail.jpg';
 import thumbnail2 from '../Images/image-product-2-thumbnail.jpg';
 import thumbnail3 from '../Images/image-product-3-thumbnail.jpg';
 import thumbnail4 from '../Images/image-product-4-thumbnail.jpg';
+import previous from '../Images/icon-previous.svg';
+import next from '../Images/icon-next.svg';
 
-function Leftside({ handleClick, smallImgs, onAdd, setIds, ids }) {
+function Leftside({
+  handleClick,
+  smallImgs,
+  onAdd,
+  setIds,
+  ids,
+  prevImg,
+  nextImg,
+}) {
   return (
     <div className='leftside'>
-      <img className='product1' src={product1} alt='' onClick={handleClick} />
+      <div className='carouse'>
+        <img src={previous} alt='' className='left-prev' onClick={prevImg} />
+        <img className='product1' src={product1} alt='' onClick={handleClick} />
+        <img src={next} alt='' className='right-next' onClick={nextImg} />
+      </div>
+
       <div className='products'>
         {smallImgs.map((product) => {
           return (
