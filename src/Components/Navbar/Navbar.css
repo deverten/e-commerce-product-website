@@ -80,7 +80,7 @@ a {
   /* right: 0px; */
   color: #fff;
   background-color: hsl(26, 100%, 55%);
-  border-radius: 10%;
+  border-radius: 50%;
   padding: 3px 7px;
   font-size: 12px;
 }
@@ -116,7 +116,9 @@ a {
     padding: 2rem;
   }
   .menu {
-    background-color: black;
+    /* background-color: black; */
+    background-color: rgb(0, 0, 0, 0.7);
+    opacity: 1;
     position: fixed;
     top: 0;
     left: 0;

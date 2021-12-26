@@ -19,12 +19,19 @@ function Leftside({
   ids,
   prevImg,
   nextImg,
+  prods,
+  selected,
 }) {
   return (
     <div className='leftside'>
       <div className='carouse'>
         <img src={previous} alt='' className='left-prev' onClick={prevImg} />
-        <img className='product1' src={product1} alt='' onClick={handleClick} />
+        <img
+          className='product1'
+          src={prods[selected].src}
+          alt=''
+          onClick={handleClick}
+        />
         <img src={next} alt='' className='right-next' onClick={nextImg} />
       </div>
 

@@ -36,7 +36,7 @@
     background-color: #fff;
     width: 15px;
     height: 15px;
-    right: -1rem;
+    right: 2rem;
     border-radius: 50%;
     padding: 1rem;
     position: absolute;
@@ -49,7 +49,7 @@
     height: 15px;
     border-radius: 50%;
     padding: 1rem;
-    left: -1rem;
+    left: 2rem;
     position: absolute;
     z-index: 1001;
     visibility: visible;

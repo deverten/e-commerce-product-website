@@ -148,6 +148,8 @@ function App() {
           smallImgs={smallImgs}
           prevImg={prevImg}
           nextImg={nextImg}
+          prods={prods}
+          selected={selected}
           // cartItems={cartItems}
           // setCartItems={setCartItems}
           onAdd={onAdd}
