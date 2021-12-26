@@ -38,6 +38,7 @@ export default function Navbar({
                   id='menuCloseBtn'
                   src={close}
                   alt=''
+                  className='close-style'
                   onClick={() => setHid(false)}
                 />
               </div>
