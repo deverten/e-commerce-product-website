@@ -2,6 +2,7 @@ import React from 'react';
 import './Rightside.css';
 import icon from '../Images/icon-cart.svg';
 import CartContent from '../CartContent/CartContent';
+import Svgicons from '../Svgicons';
 
 function Rightside({
   value,
@@ -34,7 +35,10 @@ function Rightside({
           <button onClick={add}>+</button>
         </div>
         <button className='add' onClick={onAdd}>
-          <img src={icon} fill='#fff' alt='cart' className='cart' /> Add to cart
+          <div className='svg'>
+            <Svgicons className='cart' fill='#fff' />
+            Add to cart
+          </div>
         </button>
       </div>
     </div>

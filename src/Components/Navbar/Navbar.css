@@ -142,11 +142,15 @@ a {
     display: flex;
     /* align-items: center; */
     flex-direction: column;
-    gap: 2.3rem;
+    /* gap: 2.3rem; */
     padding-left: 0;
     margin-left: 0;
 
     /* margin-left: -10rem; */
+  }
+  li {
+    font-size: 20px;
+    font-weight: 700;
   }
   .cartcontent {
     width: 100%;

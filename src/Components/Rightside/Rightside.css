@@ -45,6 +45,7 @@ button {
   font-weight: 600;
 }
 .cart {
+  display: inline;
   width: 15px;
   height: 15px;
   margin-left: 0;
@@ -77,6 +78,11 @@ h2 {
   margin-top: 0;
   font-size: 2rem;
   font-weight: 700;
+}
+.svg {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 @media screen and (max-width: 760px) {
   .rightside {

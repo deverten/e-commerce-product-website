@@ -15,6 +15,7 @@ import thumbnail1 from './Components/Images/image-product-1-thumbnail.jpg';
 import thumbnail2 from './Components/Images/image-product-2-thumbnail.jpg';
 import thumbnail3 from './Components/Images/image-product-3-thumbnail.jpg';
 import thumbnail4 from './Components/Images/image-product-4-thumbnail.jpg';
+import Closesvg from './Components/Closesvg';
 
 function App() {
   const thumbNails = [
@@ -171,11 +172,11 @@ function App() {
       </div>
       <Modal open={isOpen}>
         <div className='bottom'>
-          <img
+          <Closesvg
             className='modal-close'
-            src={close}
-            alt=''
-            onClick={() => setisOpen(() => !isOpen)}
+            setisOpen={setisOpen}
+            isOpen={isOpen}
+            fill='#fff'
           />
           <div className='carousel'>
             <img src={previous} alt='' className='prev' onClick={prevImg} />
