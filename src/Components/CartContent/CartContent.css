@@ -61,12 +61,13 @@ button.check {
     -moz-box-shadow: 1px 16px 37px -8px rgba(0, 0, 0, 0.75);
     position: absolute;
     top: 8rem;
+
     padding: 1rem;
     z-index: 9999;
     background-color: #fff;
 
-    right: 0;
-    width: 90vw;
+    /* right: 0; */
+    width: 87vw;
     border-top: #fff;
     border-radius: 10px;
   }

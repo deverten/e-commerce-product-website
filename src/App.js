@@ -62,7 +62,7 @@ function App() {
   const [cartItems, setCartItems] = useState(0);
   const [ids, setIds] = useState({});
   const [hid, setHid] = useState(false);
-  const [hidee, setHideCart] = useState(false);
+  const [hidee, setHideCart] = useState(true);
   console.log(ids);
 
   // const onAdd = (product) => {
