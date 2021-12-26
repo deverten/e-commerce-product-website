@@ -61,6 +61,8 @@ function App() {
   const [itemNumbers, setItemNumbers] = useState(0);
   const [cartItems, setCartItems] = useState(0);
   const [ids, setIds] = useState({});
+  const [hid, setHid] = useState(false);
+  const [hidee, setHideCart] = useState(false);
   console.log(ids);
 
   // const onAdd = (product) => {
@@ -89,7 +91,12 @@ function App() {
   //     );
   //   }
   // };
-
+  const hideMenu = () => {
+    setHid(true);
+  };
+  const hideCart = () => {
+    setHideCart((hidee) => !hidee);
+  };
   const nextImg = () => {
     if (selected < prods.length - 1) setSelected((selected) => selected + 1);
   };
@@ -112,22 +119,12 @@ function App() {
     setCartItems((cartItems) => (cartItems += itemNumbers));
   };
 
-  function calc(x) {
-    const splitted = x
-      .split('')
-      .map((item) => item.charCodeAt(0))
-      .join('');
-    for (let i = 0; i < splitted.length; i++) {
-      if (splitted[i] === 7) {
-        splitted[i] = 1;
-      }
-    }
-    return splitted;
-  }
-  console.log(calc());
+  const onReduce = () => {
+    setCartItems((cartItems) => cartItems - 1);
+  };
 
   return (
-    <div className='App'>
+    <div className='app'>
       <Navbar
         onAdd={onAdd}
         smallImgs={smallImgs}
@@ -135,9 +132,17 @@ function App() {
         calculate={calculate}
         // onRemove={onRemove}
         cartItems={cartItems}
+        hideMenu={hideMenu}
+        hid={hid}
+        setHid={setHid}
+        hidee={hidee}
+        hideCart={hideCart}
+        setHideCart={setHideCart}
+        onReduce={onReduce}
       />
       <div className='section'>
         <Leftside
+          className='lefty'
           ids={ids}
           setIds={setIds}
           smallImgs={smallImgs}
@@ -151,6 +156,7 @@ function App() {
           }}
         />
         <Rightside
+          className='righty'
           itemNumbers={itemNumbers}
           ids={ids}
           value={itemNumbers}

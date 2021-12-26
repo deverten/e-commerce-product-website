@@ -22,6 +22,8 @@
   justify-content: center;
   gap: 0.3rem;
   cursor: pointer;
+  visibility: hidden;
+  margin-right: 1rem;
 }
 .line {
   width: 1.5rem;
@@ -70,7 +72,7 @@ a {
   position: absolute;
   top: 10rem;
   z-index: 10;
-  display: none;
+  /* display: none; */
 }
 .cart-num {
   position: absolute;
@@ -100,10 +102,15 @@ a {
   display: flex;
 }
 @media screen and (max-width: 760px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
   .slide-menu {
     /* display: flex;
     flex-direction: column; */
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
     width: 65vw;
     height: 100%;
     padding: 2rem;
@@ -116,6 +123,9 @@ a {
     right: 0;
     height: 100vh;
     z-index: 10000;
+  }
+  .hamburger {
+    visibility: visible;
   }
   img#menuCloseBtn {
     transition: transform 0.5s ease;
@@ -130,10 +140,16 @@ a {
     flex-direction: column;
     gap: 2.3rem;
     padding-left: 0;
+    margin-left: 0;
 
     /* margin-left: -10rem; */
   }
+  .cartcontent {
+    width: 100%;
+    visibility: hidden;
+  }
+
   .hidden {
-    /* display: none; */
+    display: none;
   }
 }

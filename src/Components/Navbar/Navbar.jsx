@@ -6,12 +6,24 @@ import avatar from '../Images/image-avatar.png';
 import logo from '../Images/logo.svg';
 import CartContent from '../CartContent/CartContent';
 
-export default function Navbar({ smallImgs, cartItems, onAdd, calculate }) {
+export default function Navbar({
+  smallImgs,
+  cartItems,
+  onAdd,
+  calculate,
+  hid,
+  hideMenu,
+  setHid,
+  hidee,
+  setHideCart,
+  hideCart,
+  onReduce,
+}) {
   return (
     <>
       <div className='navbar'>
         <div className='left-nav'>
-          <div className='hamburger'>
+          <div className='hamburger' onClick={hideMenu}>
             <div className='line'></div>
             <div className='line'></div>
             <div className='line'></div>
@@ -19,10 +31,15 @@ export default function Navbar({ smallImgs, cartItems, onAdd, calculate }) {
           <div>
             <img className='logo' src={logo} alt='' />
           </div>
-          <nav className='menu hidden'>
+          <nav className={`menu ${hid ? '' : 'hidden'}`}>
             <div className='slide-menu'>
               <div>
-                <img id='menuCloseBtn' src={close} alt='' />
+                <img
+                  id='menuCloseBtn'
+                  src={close}
+                  alt=''
+                  onClick={() => setHid(false)}
+                />
               </div>
 
               <ul>
@@ -48,7 +65,7 @@ export default function Navbar({ smallImgs, cartItems, onAdd, calculate }) {
 
         <div className='right-nav'>
           <div className='cart-div'>
-            <img className='cart' src={icon} alt='' />
+            <img className='cart' src={icon} alt='' onClick={hideCart} />
             <span className='cart-num'>{cartItems}</span>
           </div>
           <img className='avatar' src={avatar} alt='' />
@@ -59,6 +76,10 @@ export default function Navbar({ smallImgs, cartItems, onAdd, calculate }) {
             // onRemove={onRemove}
             cartItems={cartItems}
             calculate={calculate}
+            hideCart={hideCart}
+            setHideCart={setHideCart}
+            hidee={hidee}
+            onReduce={onReduce}
           />
         </div>
       </div>

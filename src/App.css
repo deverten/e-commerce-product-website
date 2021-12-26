@@ -1,8 +1,8 @@
 body {
   font-family: 'Kumbh Sans';
 }
-.App {
-  width: 90%;
+.app {
+  width: 100vw;
   margin: 0 auto;
 }
 .section {
@@ -80,9 +80,23 @@ body {
   opacity: 1;
   /* width: 100%; */
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 760px) {
   .section {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+  }
+  .lefty {
+    width: 100%;
+  }
+  .righty {
+    width: 100vw;
+    /* padding: 0 1rem 0 1rem; */
+  }
+  .modal-styles {
+    visibility: hidden;
+  }
+  .bottom {
+    visibility: hidden;
   }
 }

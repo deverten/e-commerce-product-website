@@ -3,9 +3,18 @@ import './CartContent.css';
 import thumbnail1 from '../Images/image-product-1-thumbnail.jpg';
 import del from '../Images/icon-delete.svg';
 
-function CartContent({ onAdd, onRemove, cartItems, calculate }) {
+function CartContent({
+  onAdd,
+  onRemove,
+  cartItems,
+  calculate,
+  hidee,
+  hideCart,
+  setHideCart,
+  onReduce,
+}) {
   return (
-    <div className='content'>
+    <div className={`content ? ${hidee ? 'hidden-visib' : ''}`}>
       <h3>Cart</h3>
       <hr />
       <div className='content-2'>
@@ -18,7 +27,7 @@ function CartContent({ onAdd, onRemove, cartItems, calculate }) {
               Fall Limited Edition Sneakers $125.00 * {cartItems}
               <span className='amount'>${calculate}</span>
             </p>
-            <img className='del' src={del} alt='' />{' '}
+            <img className='del' src={del} alt='' onClick={onReduce} />{' '}
           </div>
         )}
       </div>
