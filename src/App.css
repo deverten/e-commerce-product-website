@@ -2,14 +2,15 @@ body {
   font-family: 'Kumbh Sans';
 }
 .app {
-  width: 100vw;
+  width: 90vw;
   margin: 0 auto;
+  /* justify-content: center; */
 }
 .section {
   position: relative;
   margin-top: 4rem;
   display: flex;
-  width: 100%;
+  width: 95%;
   justify-content: space-between;
 }
 
@@ -80,11 +81,18 @@ body {
   opacity: 1;
   /* width: 100%; */
 }
+.modal-close {
+  cursor: pointer;
+  color: #fff;
+}
 @media screen and (max-width: 760px) {
+  .app {
+    width: 100vw;
+  }
   .section {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
   }
   .lefty {
     width: 100%;

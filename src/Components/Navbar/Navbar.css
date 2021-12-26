@@ -22,7 +22,8 @@
   justify-content: center;
   gap: 0.3rem;
   cursor: pointer;
-  visibility: hidden;
+  display: none;
+  /*visibility: hidden; */
   margin-right: 1rem;
 }
 .line {
@@ -127,7 +128,8 @@ a {
     z-index: 10000;
   }
   .hamburger {
-    visibility: visible;
+    display: flex;
+    /* visibility: visible; */
   }
   img#menuCloseBtn {
     transition: transform 0.5s ease;

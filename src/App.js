@@ -171,7 +171,12 @@ function App() {
       </div>
       <Modal open={isOpen}>
         <div className='bottom'>
-          <img src={close} alt='' />
+          <img
+            className='modal-close'
+            src={close}
+            alt=''
+            onClick={() => setisOpen(() => !isOpen)}
+          />
           <div className='carousel'>
             <img src={previous} alt='' className='prev' onClick={prevImg} />
             <img className='product1' src={prods[selected].src} alt='' />
