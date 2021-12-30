@@ -26,6 +26,7 @@ body {
 .carousel {
   align-items: center;
   display: flex;
+  cursor: pointer;
 }
 .next {
   background-color: #fff;

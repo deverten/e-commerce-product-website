@@ -43,6 +43,7 @@ button {
   padding: 0rem 1rem;
   color: hsl(26, 100%, 55%);
   font-weight: 600;
+  cursor: pointer;
 }
 .cart {
   display: inline;

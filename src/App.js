@@ -151,6 +151,7 @@ function App() {
           nextImg={nextImg}
           prods={prods}
           selected={selected}
+          setSelected={setSelected}
           // cartItems={cartItems}
           // setCartItems={setCartItems}
           onAdd={onAdd}

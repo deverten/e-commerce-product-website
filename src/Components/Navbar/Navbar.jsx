@@ -45,19 +45,19 @@ export default function Navbar({
 
               <ul>
                 <li>
-                  <a href='collection'>Collections</a>
+                  <a href='#'>Collections</a>
                 </li>
                 <li>
-                  <a href='men'>Men</a>
+                  <a href='#'>Men</a>
                 </li>
                 <li>
-                  <a href='kids'>Women</a>
+                  <a href='#'>Women</a>
                 </li>
                 <li>
-                  <a href='collection'>About</a>
+                  <a href='#'>About</a>
                 </li>
                 <li>
-                  <a href='collection'>Contact</a>
+                  <a href='#'>Contact</a>
                 </li>
               </ul>
             </div>

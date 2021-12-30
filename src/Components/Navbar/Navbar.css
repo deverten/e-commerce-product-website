@@ -22,8 +22,8 @@
   justify-content: center;
   gap: 0.3rem;
   cursor: pointer;
-  display: none;
-  /*visibility: hidden; */
+  /* display: none; */
+  visibility: hidden;
   margin-right: 1rem;
 }
 
@@ -97,6 +97,9 @@ a {
 .slide-menu {
   display: flex;
 }
+.close-style {
+  visibility: hidden;
+}
 @media screen and (max-width: 760px) {
   .navbar {
     padding: 0 1rem;
@@ -123,8 +126,8 @@ a {
     z-index: 10000;
   }
   .hamburger {
-    display: inline-flex;
-    /* visibility: visible; */
+    /* display: inline-flex; */
+    visibility: visible;
   }
   .line {
     width: 1.5rem;
@@ -141,6 +144,7 @@ a {
   .close-style {
     transform: scale(1.5);
     margin-bottom: 2rem;
+    visibility: visible;
   }
   ul {
     display: flex;

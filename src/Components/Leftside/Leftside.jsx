@@ -21,6 +21,7 @@ function Leftside({
   nextImg,
   prods,
   selected,
+  setSelected,
 }) {
   return (
     <div className='leftside'>
@@ -36,20 +37,18 @@ function Leftside({
       </div>
 
       <div className='products'>
-        {smallImgs.map((product) => {
+        {smallImgs.map((product, index) => {
           return (
             <img
               src={product.name}
               alt=''
               className='select'
               key={product.id}
+              index={index}
               product={product}
               // onAdd={onAdd}
-              onClick={() => {
-                setIds(() => `{id: ${product.id}, name: ${product.name} }`);
-                console.log(ids);
-                // onAdd(product)
-              }}
+              onClick={() => setSelected(index)}
+              // onAdd(prod
             />
           );
         })}

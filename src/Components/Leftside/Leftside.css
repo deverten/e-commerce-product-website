@@ -24,6 +24,14 @@
   width: 5rem;
   height: 5rem;
   border-radius: 10px;
+  cursor: pointer;
+}
+.select:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  opacity: 0.9;
+}
+.select:active {
+  border: 2px solid hsl(26, 100%, 55%);
 }
 @media screen and (max-width: 760px) {
   .product1 {
